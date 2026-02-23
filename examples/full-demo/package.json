@@ -3,9 +3,16 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "npm run build:app && tsx server.ts",
+    "build:app": "esbuild app.ts --bundle --outfile=app.js --format=esm --target=es2022",
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "esbuild": "^0.27.3",
+    "tsx": "^4.21.0"
   }
 }

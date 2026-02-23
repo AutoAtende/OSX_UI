@@ -1,0 +1,64 @@
+.osx-progress {
+  width: 100%;
+  position: relative;
+}
+
+.osx-progress-track {
+  height: 8px;
+  background: var(--osx-bg-secondary, #2d2d2d);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.osx-progress-bar {
+  height: 100%;
+  background: var(--osx-primary, #007aff);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.osx-progress.success .osx-progress-bar {
+  background: #22c55e;
+}
+
+.osx-progress.warning .osx-progress-bar {
+  background: #f59e0b;
+}
+
+.osx-progress.danger .osx-progress-bar {
+  background: #ef4444;
+}
+
+.osx-progress-label {
+  margin-top: 6px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--osx-muted, #888);
+}
+
+.osx-spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--osx-border, #444);
+  border-top-color: var(--osx-primary, #007aff);
+  border-radius: 50%;
+  animation: osx-spin 0.8s linear infinite;
+}
+
+.osx-spinner.small {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+.osx-spinner.large {
+  width: 40px;
+  height: 40px;
+  border-width: 4px;
+}
+
+@keyframes osx-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

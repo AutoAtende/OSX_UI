@@ -1,0 +1,73 @@
+.osx-fileupload {
+  width: 100%;
+}
+
+.osx-fileupload-input {
+  display: none;
+}
+
+.osx-fileupload-dropzone {
+  border: 2px dashed var(--osx-border, #444);
+  border-radius: 8px;
+  padding: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.osx-fileupload-dropzone:hover,
+.osx-fileupload-dropzone.dragover {
+  border-color: var(--osx-primary, #007aff);
+  background: rgba(0, 122, 255, 0.05);
+}
+
+.osx-fileupload-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  color: var(--osx-muted, #888);
+}
+
+.osx-fileupload-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.osx-fileupload-text {
+  color: var(--osx-muted, #888);
+  font-size: 14px;
+}
+
+.osx-fileupload-list {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.osx-fileupload-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--osx-bg-secondary, #2d2d2d);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.osx-fileupload-item-name {
+  color: var(--osx-text, #fff);
+  font-size: 13px;
+}
+
+.osx-fileupload-item-remove {
+  background: transparent;
+  border: none;
+  color: var(--osx-muted, #888);
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0 4px;
+}
+
+.osx-fileupload-item-remove:hover {
+  color: #ef4444;
+}

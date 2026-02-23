@@ -1,0 +1,61 @@
+.osx-autocomplete {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.osx-autocomplete-input {
+  width: 100%;
+  background: var(--osx-bg-secondary, #2d2d2d);
+  border: 1px solid var(--osx-border, #444);
+  border-radius: 6px;
+  color: var(--osx-text, #fff);
+  padding: 10px 12px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+
+.osx-autocomplete-input:focus {
+  border-color: var(--osx-primary, #007aff);
+}
+
+.osx-autocomplete-input::placeholder {
+  color: var(--osx-muted, #888);
+}
+
+.osx-autocomplete-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: var(--osx-bg-secondary, #2d2d2d);
+  border: 1px solid var(--osx-border, #444);
+  border-radius: 6px;
+  max-height: 240px;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.osx-autocomplete-item {
+  padding: 10px 12px;
+  cursor: pointer;
+  color: var(--osx-text, #fff);
+  font-size: 14px;
+  transition: background 0.1s;
+}
+
+.osx-autocomplete-item:hover,
+.osx-autocomplete-item.active {
+  background: var(--osx-hover, #3d3d3d);
+}
+
+.osx-autocomplete-empty {
+  padding: 12px;
+  color: var(--osx-muted, #888);
+  font-size: 14px;
+  text-align: center;
+}

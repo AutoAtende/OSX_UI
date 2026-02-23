@@ -1,0 +1,57 @@
+.osx-daterangepicker {
+  --osx-dtr-bg: var(--osx-bg-secondary, #2d2d2d);
+  --osx-dtr-text: var(--osx-text, #fff);
+  --osx-dtr-border: var(--osx-border, #444);
+  --osx-dtr-focus: var(--osx-primary, #007aff);
+
+  position: relative;
+  display: inline-block;
+}
+
+.osx-daterangepicker-inputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.osx-daterangepicker-input {
+  background: var(--osx-dtr-bg);
+  border: 1px solid var(--osx-dtr-border);
+  border-radius: 6px;
+  color: var(--osx-dtr-text);
+  padding: 8px 12px;
+  font-size: 13px;
+  width: 110px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.osx-daterangepicker-input:focus {
+  border-color: var(--osx-dtr-focus);
+}
+
+.osx-daterangepicker-input::placeholder {
+  color: var(--osx-muted, #888);
+}
+
+.osx-daterangepicker-separator {
+  color: var(--osx-muted, #888);
+  font-size: 14px;
+}
+
+.osx-daterangepicker-calendars {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  z-index: 100;
+}
+
+.osx-daterangepicker-wrapper {
+  display: flex;
+  gap: 16px;
+  background: var(--osx-dtr-bg);
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,86 @@
+.osx-calendar {
+  --osx-cal-bg: var(--osx-bg-secondary, #2d2d2d);
+  --osx-cal-text: var(--osx-text, #fff);
+  --osx-cal-muted: var(--osx-muted, #888);
+  --osx-cal-hover: var(--osx-hover, #3d3d3d);
+  --osx-cal-selected-bg: var(--osx-primary, #007aff);
+  --osx-cal-selected-text: #fff;
+  --osx-cal-disabled: var(--osx-muted, #555);
+
+  background: var(--osx-cal-bg);
+  border-radius: 8px;
+  padding: 12px;
+  min-width: 260px;
+  user-select: none;
+}
+
+.osx-calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.osx-calendar-month {
+  font-weight: 600;
+  color: var(--osx-cal-text);
+  font-size: 14px;
+}
+
+.osx-calendar-nav {
+  background: transparent;
+  border: none;
+  color: var(--osx-cal-text);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.osx-calendar-nav:hover {
+  background: var(--osx-cal-hover);
+}
+
+.osx-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.osx-calendar-day-name {
+  text-align: center;
+  font-size: 11px;
+  color: var(--osx-cal-muted);
+  padding: 4px;
+  font-weight: 500;
+}
+
+.osx-calendar-day {
+  background: transparent;
+  border: none;
+  color: var(--osx-cal-text);
+  padding: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+
+.osx-calendar-day.empty {
+  cursor: default;
+}
+
+.osx-calendar-day:hover:not(.disabled):not(.selected) {
+  background: var(--osx-cal-hover);
+}
+
+.osx-calendar-day.selected {
+  background: var(--osx-cal-selected-bg);
+  color: var(--osx-cal-selected-text);
+}
+
+.osx-calendar-day.disabled {
+  color: var(--osx-cal-disabled);
+  cursor: not-allowed;
+  opacity: 0.5;
+}

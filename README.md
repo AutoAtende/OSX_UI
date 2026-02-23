@@ -13,7 +13,7 @@ OSX_UI gives your single-page application the look and feel of a macOS desktop, 
 - **Client-side router** with History API and automatic link interception
 - **Dark and light themes** out of the box, plus a token-based system for custom themes
 - **Responsive mobile** -- windows become fullscreen, menu bar hides, drag/resize disabled on small screens
-- **Component library** -- buttons, cards, pills, fields, password fields, modals, toolbars
+- **Component library** -- buttons, cards, pills, fields, password fields, modals, toolbars, calendars, date pickers, form inputs, tables, tabs, accordions, toasts, and more
 - **Server helpers** -- Express SPA catch-all middleware and `wantsJson` content negotiation
 
 ## Quick Start
@@ -101,6 +101,29 @@ function showHome() {
 | `createPasswordField` | function  | Password field with toggle           |
 | `createModal`         | function  | Modal dialog factory                 |
 | `createToolbar`       | function  | Toolbar container factory            |
+| `createCalendar`      | function  | Date picker calendar                 |
+| `createDateRangePicker`| function | Date range picker                   |
+| `createCheckbox`      | function  | Checkbox component                   |
+| `createRadioGroup`   | function  | Radio button group                   |
+| `createToggle`        | function  | Toggle switch                        |
+| `createAutocomplete`  | function  | Autocomplete input                   |
+| `createFileUpload`    | function  | Drag & drop file upload              |
+| `createColorPicker`   | function  | Color picker                         |
+| `createTabs`          | function  | Tab navigation                       |
+| `createAccordion`     | function  | Accordion/collapsible sections       |
+| `createTable`         | function  | Data table with pagination           |
+| `createList`          | function  | List component                       |
+| `createTree`          | function  | Tree/hierarchical view               |
+| `createBadge`         | function  | Badge/counter                        |
+| `createAvatar`        | function  | User avatar                          |
+| `createProgress`      | function  | Progress bar                         |
+| `createSpinner`       | function  | Loading spinner                      |
+| `createToast`         | function  | Toast notifications                  |
+| `createTooltip`       | function  | Tooltip on hover                     |
+| `createSidebar`       | function  | Collapsible sidebar                  |
+| `createContextMenu`   | function  | Right-click context menu            |
+| `createDropdown`      | function  | Dropdown menu                        |
+| `createPopover`       | function  | Positionable popover                 |
 | `createDesktop`       | function  | Desktop surface creator              |
 | `centerPosition`      | function  | Calculates centered x/y coordinates  |
 | `escapeHtml`          | function  | HTML string escaping utility         |
@@ -144,7 +167,7 @@ All tokens are applied as CSS custom properties (`--osx-bg`, `--osx-accent`, etc
 All components are factory functions that return DOM elements.
 
 ```js
-import { createButton, createCard, createPill, createField, createPasswordField, createModal, createToolbar } from 'osx-ui';
+import { createButton, createCard, createPill, createField, createPasswordField, createModal, createToolbar, createCalendar, createCheckbox, createTabs, createToast } from 'osx-ui';
 
 const btn = createButton({ label: 'Save', variant: 'primary', onClick: () => save() });
 const card = createCard({ header: '<h3>Title</h3>', body: '<p>Content</p>' });
@@ -153,6 +176,10 @@ const { container, input } = createField({ label: 'Email', name: 'email', type: 
 const { container: pwContainer, input: pwInput } = createPasswordField({ label: 'Password', name: 'pw' });
 const { close } = createModal({ content: '<p>Are you sure?</p>' });
 const toolbar = createToolbar([btn]);
+const calendar = createCalendar({ onChange: (date) => console.log(date) });
+const checkbox = createCheckbox({ label: 'Agree', onChange: (checked) => console.log(checked) });
+const tabs = createTabs({ tabs: [{ id: '1', label: 'Tab', content: '<p>Content</p>' }] });
+createToast({ message: 'Hello!', type: 'success' });
 ```
 
 See [docs/api/components.md](docs/api/components.md) for the full options reference.

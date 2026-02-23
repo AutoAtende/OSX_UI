@@ -12,7 +12,7 @@ app.use('/css', express.static(join(__dirname, '../../css')));
 app.use(express.static(__dirname));
 
 // SPA catch-all
-app.get('*', (_req, res) => {
+app.use((_req, res) => {
   res.sendFile(join(__dirname, 'index.html'));
 });
 

@@ -1,0 +1,171 @@
+.osx-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.osx-checkbox.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.osx-checkbox-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.osx-checkbox-mark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--osx-muted, #888);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.osx-checkbox-input:checked + .osx-checkbox-mark {
+  background: var(--osx-primary, #007aff);
+  border-color: var(--osx-primary, #007aff);
+}
+
+.osx-checkbox-input:checked + .osx-checkbox-mark::after {
+  content: '';
+  width: 5px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+}
+
+.osx-checkbox:hover .osx-checkbox-mark {
+  border-color: var(--osx-primary, #007aff);
+}
+
+.osx-checkbox-label {
+  color: var(--osx-text, #fff);
+  font-size: 14px;
+}
+
+.osx-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.osx-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.osx-radio.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.osx-radio-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.osx-radio-mark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--osx-muted, #888);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.osx-radio-input:checked + .osx-radio-mark {
+  border-color: var(--osx-primary, #007aff);
+}
+
+.osx-radio-input:checked + .osx-radio-mark::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--osx-primary, #007aff);
+  border-radius: 50%;
+}
+
+.osx-radio:hover .osx-radio-mark {
+  border-color: var(--osx-primary, #007aff);
+}
+
+.osx-radio-label {
+  color: var(--osx-text, #fff);
+  font-size: 14px;
+}
+
+.osx-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.osx-toggle.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.osx-toggle-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.osx-toggle-track {
+  width: 44px;
+  height: 24px;
+  background: var(--osx-muted, #555);
+  border-radius: 12px;
+  position: relative;
+  transition: background 0.2s;
+}
+
+.osx-toggle-input:checked + .osx-toggle-track {
+  background: var(--osx-primary, #007aff);
+}
+
+.osx-toggle-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.osx-toggle-input:checked + .osx-toggle-track .osx-toggle-thumb {
+  transform: translateX(20px);
+}
+
+.osx-toggle:hover .osx-toggle-track {
+  background: var(--osx-hover, #666);
+}
+
+.osx-toggle-input:checked + .osx-toggle-track {
+  background: var(--osx-primary, #007aff);
+}
+
+.osx-toggle-label {
+  color: var(--osx-text, #fff);
+  font-size: 14px;
+}

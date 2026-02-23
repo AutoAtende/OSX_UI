@@ -1,0 +1,72 @@
+.osx-table-container {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.osx-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.osx-table th,
+.osx-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--osx-border, #444);
+}
+
+.osx-table th {
+  background: var(--osx-bg-secondary, #2d2d2d);
+  color: var(--osx-text, #fff);
+  font-weight: 600;
+}
+
+.osx-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+}
+
+.osx-table th.sortable:hover {
+  background: var(--osx-hover, #3d3d3d);
+}
+
+.osx-table tbody tr:hover {
+  background: var(--osx-hover, #2a2a2a);
+}
+
+.osx-table td {
+  color: var(--osx-text, #fff);
+}
+
+.osx-table-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.osx-table-page-btn {
+  background: var(--osx-bg-secondary, #2d2d2d);
+  border: 1px solid var(--osx-border, #444);
+  color: var(--osx-text, #fff);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.osx-table-page-btn:hover:not(:disabled) {
+  background: var(--osx-hover, #3d3d3d);
+}
+
+.osx-table-page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.osx-table-page-info {
+  color: var(--osx-muted, #888);
+  font-size: 13px;
+}
