@@ -1,0 +1,39 @@
+.osx-traffic-lights { display: flex; gap: 8px; flex-shrink: 0; }
+
+.osx-tl {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+}
+.osx-tl.close    { background: var(--osx-tl-close, #ff5f57); }
+.osx-tl.minimize { background: var(--osx-tl-minimize, #febc2e); }
+.osx-tl.maximize { background: var(--osx-tl-maximize, #28c840); }
+
+.osx-traffic-lights:hover .osx-tl.close::after    { content: '\00d7'; }
+.osx-traffic-lights:hover .osx-tl.minimize::after  { content: '\2212'; }
+.osx-traffic-lights:hover .osx-tl.maximize::after  { content: '+'; }
+
+.osx-tl::after {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: rgba(0,0,0,.6);
+  content: '';
+}
+
+.osx-window:not(.focused) .osx-tl.close,
+.osx-window:not(.focused) .osx-tl.minimize,
+.osx-window:not(.focused) .osx-tl.maximize {
+  background: rgba(128,128,128,.5);
+}
+.osx-window:not(.focused) .osx-traffic-lights:hover .osx-tl.close    { background: var(--osx-tl-close, #ff5f57); }
+.osx-window:not(.focused) .osx-traffic-lights:hover .osx-tl.minimize { background: var(--osx-tl-minimize, #febc2e); }
+.osx-window:not(.focused) .osx-traffic-lights:hover .osx-tl.maximize { background: var(--osx-tl-maximize, #28c840); }

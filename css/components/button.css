@@ -1,0 +1,33 @@
+.osx-btn {
+  border: 1px solid rgba(148,163,184,.25);
+  background: rgba(15,23,42,.7);
+  color: var(--osx-text, #e5e7eb);
+  padding: 10px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: .2px;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1;
+}
+.osx-btn:hover { border-color: rgba(56,189,248,.55); }
+.osx-btn.primary { border-color: rgba(56,189,248,.65); }
+.osx-btn.danger { border-color: rgba(239,68,68,.6); }
+.osx-btn.ghost { background: transparent; }
+.osx-btn.icon {
+  width: 40px; height: 40px; padding: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 12px;
+}
+.osx-btn.icon svg { width: 18px; height: 18px; display: block; }
+.osx-btn.status {
+  border: 1px solid rgba(148,163,184,.35);
+  background: rgba(15,23,42,.15);
+}
+.osx-btn.status.ok     { color: var(--osx-ok, #22c55e); }
+.osx-btn.status.danger { color: var(--osx-danger, #ef4444); }
+.osx-btn.status.purple { color: #a855f7; }
+.osx-btn.status.muted  { color: var(--osx-muted, #94a3b8); }
+.osx-btn.status:hover  { filter: brightness(1.05); }
+.osx-btn.status.active { outline: 2px solid currentColor; outline-offset: 2px; }

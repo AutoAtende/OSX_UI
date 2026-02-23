@@ -1,0 +1,24 @@
+@keyframes osx-win-open {
+  from { opacity: 0; transform: scale(.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes osx-win-close {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(.85); }
+}
+@keyframes osx-win-minimize {
+  from { opacity: 1; transform: scale(1) translateY(0); }
+  to   { opacity: 0; transform: scale(.4) translateY(100px); }
+}
+
+.osx-window.anim-open {
+  animation: osx-win-open .2s ease-out both;
+}
+.osx-window.anim-close {
+  animation: osx-win-close .15s ease-in both;
+  pointer-events: none;
+}
+.osx-window.anim-minimize {
+  animation: osx-win-minimize .25s ease-in both;
+  pointer-events: none;
+}

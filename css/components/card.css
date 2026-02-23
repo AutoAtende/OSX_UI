@@ -1,0 +1,16 @@
+.osx-card {
+  border: 1px solid var(--osx-border, rgba(148,163,184,.18));
+  border-radius: 16px;
+  background: rgba(15,23,42,.55);
+}
+.osx-card-hd {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(148,163,184,.12);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+.osx-card-bd {
+  padding: 14px;
+}

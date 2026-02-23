@@ -1,0 +1,25 @@
+.osx-pill {
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(148,163,184,.25);
+  color: var(--osx-muted, #94a3b8);
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.osx-pill.compact {
+  padding: 8px 10px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.osx-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+.osx-dot.ok     { background: var(--osx-ok, #22c55e); }
+.osx-dot.danger { background: var(--osx-danger, #ef4444); }
+.osx-dot.purple { background: #a855f7; }
+.osx-dot.muted  { background: #64748b; }

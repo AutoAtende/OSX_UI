@@ -1,0 +1,22 @@
+[data-osx-theme="dark"],
+:root {
+  --osx-bg: #0b1220;
+  --osx-panel: #0f172a;
+  --osx-panel-2: #111c33;
+  --osx-text: #e5e7eb;
+  --osx-muted: #94a3b8;
+  --osx-accent: #38bdf8;
+  --osx-danger: #ef4444;
+  --osx-ok: #22c55e;
+  --osx-win-bg: rgba(30,30,30,.85);
+  --osx-titlebar-bg: rgba(60,60,60,.95);
+  --osx-tl-close: #ff5f57;
+  --osx-tl-minimize: #febc2e;
+  --osx-tl-maximize: #28c840;
+  --osx-shadow: 0 20px 60px rgba(0,0,0,.35);
+  --osx-shadow-focused: 0 24px 70px rgba(0,0,0,.5);
+  --osx-font: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+  --osx-menubar-height: 28px;
+  --osx-border: rgba(148,163,184,.18);
+  --osx-border-light: rgba(255,255,255,.08);
+}

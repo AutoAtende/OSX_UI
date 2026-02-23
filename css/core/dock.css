@@ -1,0 +1,24 @@
+.osx-dock {
+  position: fixed;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  background: rgba(30,30,30,.7);
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 6px 12px;
+  z-index: 9999;
+}
+.osx-dock-item {
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--osx-text, #e5e7eb);
+  cursor: pointer;
+  background: rgba(255,255,255,.08);
+  white-space: nowrap;
+}
+.osx-dock-item:hover { background: rgba(255,255,255,.15); }
+.osx-dock:empty { display: none; }

@@ -1,0 +1,31 @@
+.osx-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.osx-field label {
+  font-size: 12px;
+  color: var(--osx-muted, #94a3b8);
+}
+.osx-field input,
+.osx-field select,
+.osx-field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(148,163,184,.25);
+  background: rgba(2,6,23,.4);
+  color: var(--osx-text, #e5e7eb);
+  font-family: inherit;
+  font-size: inherit;
+}
+.osx-field textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+.osx-field input.invalid,
+.osx-field textarea.invalid {
+  outline: 2px solid rgba(239,68,68,.75);
+  border-color: rgba(239,68,68,.75);
+}

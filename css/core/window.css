@@ -1,0 +1,46 @@
+.osx-window {
+  position: absolute;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--osx-shadow, 0 20px 60px rgba(0,0,0,.35)), 0 0 0 1px var(--osx-border-light, rgba(255,255,255,.08));
+  display: flex;
+  flex-direction: column;
+  background: var(--osx-win-bg, rgba(30,30,30,.85));
+  backdrop-filter: blur(20px);
+  min-width: 320px;
+  min-height: 200px;
+  transition: box-shadow .15s;
+}
+.osx-window.focused {
+  box-shadow: var(--osx-shadow-focused, 0 24px 70px rgba(0,0,0,.5)), 0 0 0 1px rgba(255,255,255,.12);
+}
+
+.osx-titlebar {
+  height: 38px;
+  background: var(--osx-titlebar-bg, rgba(60,60,60,.95));
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  cursor: grab;
+  user-select: none;
+  flex-shrink: 0;
+}
+.osx-window.focused .osx-titlebar { background: rgba(60,60,60,1); }
+.osx-titlebar:active { cursor: grabbing; }
+
+.osx-title {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,.85);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.osx-content {
+  flex: 1;
+  overflow: auto;
+  color: var(--osx-text, #e5e7eb);
+}

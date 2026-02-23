@@ -1,0 +1,11 @@
+{
+  "name": "osx-ui-notes-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.0.0"
+  }
+}

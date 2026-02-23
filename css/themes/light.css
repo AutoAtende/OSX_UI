@@ -1,0 +1,41 @@
+[data-osx-theme="light"] {
+  --osx-bg: #f0f2f5;
+  --osx-panel: #ffffff;
+  --osx-panel-2: #f8f9fa;
+  --osx-text: #1a1a2e;
+  --osx-muted: #6b7280;
+  --osx-accent: #0284c7;
+  --osx-danger: #dc2626;
+  --osx-ok: #16a34a;
+  --osx-win-bg: rgba(255,255,255,.92);
+  --osx-titlebar-bg: rgba(232,232,232,.95);
+  --osx-tl-close: #ff5f57;
+  --osx-tl-minimize: #febc2e;
+  --osx-tl-maximize: #28c840;
+  --osx-shadow: 0 20px 60px rgba(0,0,0,.12);
+  --osx-shadow-focused: 0 24px 70px rgba(0,0,0,.18);
+  --osx-border: rgba(0,0,0,.1);
+  --osx-border-light: rgba(0,0,0,.06);
+}
+[data-osx-theme="light"] .osx-titlebar { background: rgba(232,232,232,.95); }
+[data-osx-theme="light"] .osx-window.focused .osx-titlebar { background: rgba(232,232,232,1); }
+[data-osx-theme="light"] .osx-title { color: rgba(0,0,0,.85); }
+[data-osx-theme="light"] .osx-menu-bar {
+  background: rgba(240,240,240,.85);
+  border-bottom-color: rgba(0,0,0,.1);
+}
+[data-osx-theme="light"] .osx-menu-bar-icon,
+[data-osx-theme="light"] .osx-menu-bar-item,
+[data-osx-theme="light"] .osx-menu-bar-auth { color: rgba(0,0,0,.85); }
+[data-osx-theme="light"] .osx-menu-bar-app { color: rgba(0,0,0,.95); }
+[data-osx-theme="light"] .osx-menu-bar-clock { color: rgba(0,0,0,.6); }
+[data-osx-theme="light"] .osx-menu-bar-dropdown {
+  background: rgba(255,255,255,.95);
+  border-color: rgba(0,0,0,.12);
+}
+[data-osx-theme="light"] .osx-dropdown-item { color: rgba(0,0,0,.85); }
+[data-osx-theme="light"] .osx-dropdown-shortcut { color: rgba(0,0,0,.4); }
+[data-osx-theme="light"] .osx-btn {
+  background: rgba(255,255,255,.8);
+  color: var(--osx-text);
+}

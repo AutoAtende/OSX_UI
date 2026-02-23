@@ -1,0 +1,13 @@
+.osx-toolbar {
+  padding: 10px 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  border-bottom: 1px solid rgba(148,163,184,.12);
+}
+.osx-toolbar::-webkit-scrollbar { height: 8px; }
+.osx-toolbar::-webkit-scrollbar-thumb { background: rgba(148,163,184,.25); border-radius: 99px; }
