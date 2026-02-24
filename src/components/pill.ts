@@ -1,30 +1,30 @@
-export type DotColor = 'ok' | 'danger' | 'purple' | 'muted';
+export type DotColor = 'ok' | 'danger' | 'purple' | 'muted'
 
 export interface PillOptions {
-  text: string;
-  dot?: DotColor;
-  compact?: boolean;
+  text: string
+  dot?: DotColor
+  compact?: boolean
 }
 
 export function createPill(opts: PillOptions): HTMLElement {
-  const pill = document.createElement('span');
-  pill.className = 'osx-pill';
-  if (opts.compact) pill.classList.add('compact');
+  const pill = document.createElement('span')
+  pill.className = 'osx-pill'
+  if (opts.compact) pill.classList.add('compact')
 
   if (opts.dot) {
-    const dot = document.createElement('span');
-    dot.className = `osx-dot ${opts.dot}`;
-    pill.appendChild(dot);
+    const dot = document.createElement('span')
+    dot.className = `osx-dot ${opts.dot}`
+    pill.appendChild(dot)
   }
 
-  const text = document.createTextNode(opts.text);
-  pill.appendChild(text);
+  const text = document.createTextNode(opts.text)
+  pill.appendChild(text)
 
-  return pill;
+  return pill
 }
 
 export function createDot(color: DotColor): HTMLElement {
-  const dot = document.createElement('span');
-  dot.className = `osx-dot ${color}`;
-  return dot;
+  const dot = document.createElement('span')
+  dot.className = `osx-dot ${color}`
+  return dot
 }

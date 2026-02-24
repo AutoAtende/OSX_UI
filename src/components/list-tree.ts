@@ -1,144 +1,145 @@
 export interface ListItem {
-  id: string;
-  label: string;
-  icon?: string;
-  action?: () => void;
+  id: string
+  label: string
+  icon?: string
+  action?: () => void
 }
 
 export interface ListOptions {
-  items: ListItem[];
-  onItemClick?: (item: ListItem) => void;
+  items: ListItem[]
+  onItemClick?: (item: ListItem) => void
 }
 
 export interface ListResult {
-  container: HTMLElement;
-  setItems: (items: ListItem[]) => void;
-  getItems: () => ListItem[];
+  container: HTMLElement
+  setItems: (items: ListItem[]) => void
+  getItems: () => ListItem[]
 }
 
 export function createList(opts: ListOptions): ListResult {
-  const container = document.createElement('div');
-  container.className = 'osx-list';
+  const container = document.createElement('div')
+  container.className = 'osx-list'
 
   function render(items: ListItem[]) {
-    container.innerHTML = '';
+    container.innerHTML = ''
 
     for (const item of items) {
-      const itemEl = document.createElement('button');
-      itemEl.className = 'osx-list-item';
+      const itemEl = document.createElement('button')
+      itemEl.className = 'osx-list-item'
 
       if (item.icon) {
-        const icon = document.createElement('span');
-        icon.className = 'osx-list-item-icon';
-        icon.innerHTML = item.icon;
-        itemEl.appendChild(icon);
+        const icon = document.createElement('span')
+        icon.className = 'osx-list-item-icon'
+        icon.innerHTML = item.icon
+        itemEl.appendChild(icon)
       }
 
-      const label = document.createElement('span');
-      label.className = 'osx-list-item-label';
-      label.textContent = item.label;
-      itemEl.appendChild(label);
+      const label = document.createElement('span')
+      label.className = 'osx-list-item-label'
+      label.textContent = item.label
+      itemEl.appendChild(label)
 
       itemEl.addEventListener('click', () => {
-        if (item.action) item.action();
-        if (opts.onItemClick) opts.onItemClick(item);
-      });
+        if (item.action) item.action()
+        if (opts.onItemClick) opts.onItemClick(item)
+      })
 
-      container.appendChild(itemEl);
+      container.appendChild(itemEl)
     }
   }
 
-  render(opts.items);
+  render(opts.items)
 
   return {
     container,
     setItems(items: ListItem[]) {
-      render(items);
+      render(items)
     },
     getItems() {
-      return opts.items;
-    },
-  };
+      return opts.items
+    }
+  }
 }
 
 export interface TreeNode {
-  id: string;
-  label: string;
-  icon?: string;
-  children?: TreeNode[];
-  expanded?: boolean;
+  id: string
+  label: string
+  icon?: string
+  children?: TreeNode[]
+  expanded?: boolean
 }
 
 export interface TreeOptions {
-  data: TreeNode[];
-  onNodeClick?: (node: TreeNode) => void;
+  data: TreeNode[]
+  onNodeClick?: (node: TreeNode) => void
 }
 
 export interface TreeResult {
-  container: HTMLElement;
+  container: HTMLElement
 }
 
 export function createTree(opts: TreeOptions): TreeResult {
-  const container = document.createElement('div');
-  container.className = 'osx-tree';
+  const container = document.createElement('div')
+  container.className = 'osx-tree'
 
   function renderNode(node: TreeNode, level = 0): HTMLElement {
-    const nodeEl = document.createElement('div');
-    nodeEl.className = 'osx-tree-node';
-    nodeEl.style.paddingLeft = `${level * 16}px`;
+    const nodeEl = document.createElement('div')
+    nodeEl.className = 'osx-tree-node'
+    nodeEl.style.paddingLeft = `${level * 16}px`
 
-    const row = document.createElement('button');
-    row.className = 'osx-tree-row';
+    const row = document.createElement('button')
+    row.className = 'osx-tree-row'
 
     if (node.children && node.children.length > 0) {
-      const toggle = document.createElement('span');
-      toggle.className = `osx-tree-toggle ${node.expanded ? 'expanded' : ''}`;
-      toggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>';
-      row.appendChild(toggle);
+      const toggle = document.createElement('span')
+      toggle.className = `osx-tree-toggle ${node.expanded ? 'expanded' : ''}`
+      toggle.innerHTML =
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>'
+      row.appendChild(toggle)
     }
 
     if (node.icon) {
-      const icon = document.createElement('span');
-      icon.className = 'osx-tree-icon';
-      icon.innerHTML = node.icon;
-      row.appendChild(icon);
+      const icon = document.createElement('span')
+      icon.className = 'osx-tree-icon'
+      icon.innerHTML = node.icon
+      row.appendChild(icon)
     }
 
-    const label = document.createElement('span');
-    label.className = 'osx-tree-label';
-    label.textContent = node.label;
-    row.appendChild(label);
+    const label = document.createElement('span')
+    label.className = 'osx-tree-label'
+    label.textContent = node.label
+    row.appendChild(label)
 
     row.addEventListener('click', () => {
       if (node.children && node.children.length > 0) {
-        node.expanded = !node.expanded;
-        render();
+        node.expanded = !node.expanded
+        render()
       }
-      if (opts.onNodeClick) opts.onNodeClick(node);
-    });
+      if (opts.onNodeClick) opts.onNodeClick(node)
+    })
 
-    nodeEl.appendChild(row);
+    nodeEl.appendChild(row)
 
     if (node.children && node.expanded) {
-      const childrenContainer = document.createElement('div');
-      childrenContainer.className = 'osx-tree-children';
+      const childrenContainer = document.createElement('div')
+      childrenContainer.className = 'osx-tree-children'
       for (const child of node.children) {
-        childrenContainer.appendChild(renderNode(child, level + 1));
+        childrenContainer.appendChild(renderNode(child, level + 1))
       }
-      nodeEl.appendChild(childrenContainer);
+      nodeEl.appendChild(childrenContainer)
     }
 
-    return nodeEl;
+    return nodeEl
   }
 
   function render() {
-    container.innerHTML = '';
+    container.innerHTML = ''
     for (const node of opts.data) {
-      container.appendChild(renderNode(node));
+      container.appendChild(renderNode(node))
     }
   }
 
-  render();
+  render()
 
-  return { container };
+  return { container }
 }

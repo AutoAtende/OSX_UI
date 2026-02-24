@@ -1,6 +1,7 @@
 /* OSX_UI — Complete CSS Bundle */
 @import './core/reset.css';
 @import './core/tokens.css';
+@import './core/accessibility.css';
 @import './themes/dark.css';
 @import './themes/light.css';
 @import './core/desktop.css';

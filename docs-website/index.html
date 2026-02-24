@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OSX_UI - macOS-style Desktop Window Manager for Web Apps</title>
+  <link rel="stylesheet" href="/css/osx-ui.css">
+  <link rel="stylesheet" href="/docs/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
+</head>
+<body>
+  <div class="docs-container">
+    <aside class="docs-sidebar">
+      <div class="docs-sidebar-header">
+        <a href="/" class="docs-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <line x1="9" y1="3" x2="9" y2="21"/>
+          </svg>
+          <span>OSX_UI</span>
+        </a>
+      </div>
+      
+      <nav class="docs-nav">
+        <div class="docs-nav-section">
+          <a href="/" class="docs-nav-title">Getting Started</a>
+          <a href="/docs/intro.html" class="docs-nav-link">Introduction</a>
+          <a href="/docs/install.html" class="docs-nav-link">Installation</a>
+          <a href="/docs/quick-start.html" class="docs-nav-link">Quick Start</a>
+        </div>
+        
+        <div class="docs-nav-section">
+          <a href="/docs/components.html" class="docs-nav-title">Components</a>
+          <a href="/docs/components/button.html" class="docs-nav-link">Button</a>
+          <a href="/docs/components/card.html" class="docs-nav-link">Card</a>
+          <a href="/docs/components/form-fields.html" class="docs-nav-link">Form Fields</a>
+          <a href="/docs/components/date-picker.html" class="docs-nav-link">Date Picker</a>
+          <a href="/docs/components/checkbox-radio.html" class="docs-nav-link">Checkbox & Radio</a>
+          <a href="/docs/components/toggle.html" class="docs-nav-link">Toggle</a>
+          <a href="/docs/components/autocomplete.html" class="docs-nav-link">Autocomplete</a>
+          <a href="/docs/components/file-upload.html" class="docs-nav-link">File Upload</a>
+          <a href="/docs/components/color-picker.html" class="docs-nav-link">Color Picker</a>
+          <a href="/docs/components/table.html" class="docs-nav-link">Table</a>
+          <a href="/docs/components/tabs.html" class="docs-nav-link">Tabs</a>
+          <a href="/docs/components/accordion.html" class="docs-nav-link">Accordion</a>
+          <a href="/docs/components/toast.html" class="docs-nav-link">Toast</a>
+          <a href="/docs/components/progress.html" class="docs-nav-link">Progress</a>
+          <a href="/docs/components/badge.html" class="docs-nav-link">Badge & Avatar</a>
+          <a href="/docs/components/tooltip.html" class="docs-nav-link">Tooltip</a>
+          <a href="/docs/components/sidebar.html" class="docs-nav-link">Sidebar</a>
+          <a href="/docs/components/menus.html" class="docs-nav-link">Menus</a>
+          <a href="/docs/components/list-tree.html" class="docs-nav-link">List & Tree</a>
+        </div>
+        
+        <div class="docs-nav-section">
+          <a href="/docs/core.html" class="docs-nav-title">Core</a>
+          <a href="/docs/core/window-manager.html" class="docs-nav-link">Window Manager</a>
+          <a href="/docs/core/menu-bar.html" class="docs-nav-link">Menu Bar</a>
+          <a href="/docs/core/dock.html" class="docs-nav-link">Dock</a>
+          <a href="/docs/core/router.html" class="docs-nav-link">Router</a>
+          <a href="/docs/core/theme.html" class="docs-nav-link">Theme</a>
+        </div>
+        
+        <div class="docs-nav-section">
+          <a href="/docs/guides.html" class="docs-nav-title">Guides</a>
+          <a href="/docs/guides/creating-windows.html" class="docs-nav-link">Creating Windows</a>
+          <a href="/docs/guides/custom-themes.html" class="docs-nav-link">Custom Themes</a>
+          <a href="/docs/guides/server.html" class="docs-nav-link">Server Integration</a>
+          <a href="/docs/guides/mobile.html" class="docs-nav-link">Mobile Responsive</a>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="docs-main">
+      <header class="docs-header">
+        <div class="docs-header-search">
+          <input type="text" placeholder="Search documentation..." class="docs-search-input">
+        </div>
+        <div class="docs-header-links">
+          <a href="https://github.com" target="_blank" class="docs-header-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="https://npmjs.com/package/osx-ui" target="_blank" class="docs-header-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>
+          </a>
+          <span class="docs-version">v0.1.0</span>
+        </div>
+      </header>
+      
+      <div class="docs-content">
+        <h1>OSX_UI</h1>
+        <p class="docs-lead">macOS-style desktop window manager framework for web apps</p>
+        
+        <div class="docs-hero">
+          <div class="docs-hero-content">
+            <p>Give your single-page application the look and feel of a macOS desktop, complete with draggable/resizable windows, a menu bar, a dock, theming, and a built-in client-side router.</p>
+          </div>
+          <div class="docs-hero-preview">
+            <div class="preview-window">
+              <div class="preview-titlebar">
+                <div class="preview-traffic-lights">
+                  <span class="traffic-light red"></span>
+                  <span class="traffic-light yellow"></span>
+                  <span class="traffic-light green"></span>
+                </div>
+                <span class="preview-title">My App</span>
+              </div>
+              <div class="preview-content">
+                <div class="preview-sidebar"></div>
+                <div class="preview-main">
+                  <div class="preview-buttons">
+                    <button class="preview-btn">Default</button>
+                    <button class="preview-btn primary">Primary</button>
+                    <button class="preview-btn danger">Danger</button>
+                  </div>
+                  <div class="preview-inputs">
+                    <input type="text" placeholder="Text input..." class="preview-input">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="docs-features">
+          <div class="docs-feature">
+            <div class="docs-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <line x1="8" y1="21" x2="16" y2="21"/>
+                <line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <h3>Window Manager</h3>
+            <p>Draggable, resizable windows with minimize, maximize, close, and z-order focus.</p>
+          </div>
+          
+          <div class="docs-feature">
+            <div class="docs-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"/>
+                <line x1="3" y1="6" x2="21" y2="6"/>
+                <line x1="3" y1="18" x2="21" y2="18"/>
+              </svg>
+            </div>
+            <h3>Menu Bar</h3>
+            <p>macOS-style menu bar with dropdowns, keyboard shortcuts, and dynamic items.</p>
+          </div>
+          
+          <div class="docs-feature">
+            <div class="docs-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+              </svg>
+            </div>
+            <h3>20+ Components</h3>
+            <p>Buttons, forms, tables, tabs, accordions, toasts, and more with macOS styling.</p>
+          </div>
+          
+          <div class="docs-feature">
+            <div class="docs-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"/>
+                <line x1="12" y1="1" x2="12" y2="3"/>
+                <line x1="12" y1="21" x2="12" y2="23"/>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                <line x1="1" y1="12" x2="3" y2="12"/>
+                <line x1="21" y1="12" x2="23" y2="12"/>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+              </svg>
+            </div>
+            <h3>Dark & Light Themes</h3>
+            <p>Built-in themes with easy customization via CSS custom properties.</p>
+          </div>
+          
+          <div class="docs-feature">
+            <div class="docs-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"/>
+                <path d="M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+            <h3>Client-side Router</h3>
+            <p>History API routing with automatic link interception for SPA navigation.</p>
+          </div>
+          
+          <div class="docs-feature">
+            <div class="docs-feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="5" y="2" width="14" height="20" rx="2"/>
+                <line x1="12" y1="18" x2="12.01" y2="18"/>
+              </svg>
+            </div>
+            <h3>Responsive</h3>
+            <p>Windows become fullscreen on mobile, with drag/resize disabled.</p>
+          </div>
+        </div>
+        
+        <div class="docs-code-section">
+          <h2>Quick Install</h2>
+          <div class="docs-code-block">
+            <pre><code>npm install osx-ui</code></pre>
+          </div>
+          
+          <h2>Quick Start</h2>
+          <div class="docs-code-block">
+            <pre><code><span class="docs-keyword">import</span> { <span class="docs-function">createApp</span> } <span class="docs-keyword">from</span> <span class="docs-string">'osx-ui'</span>;
+
+<span class="docs-keyword">const</span> app = <span class="docs-function">createApp</span>({
+  <span class="docs-property">container</span>: document.<span class="docs-function">getElementById</span>(<span class="docs-string">'root'</span>),
+  <span class="docs-property">appName</span>: <span class="docs-string">'My App'</span>,
+  <span class="docs-property">theme</span>: <span class="docs-string">'dark'</span>,
+  <span class="docs-property">showClock</span>: <span class="docs-keyword">true</span>,
+});
+
+app.router.<span class="docs-function">start</span>();</code></pre>
+          </div>
+          
+          <a href="/docs/quick-start.html" class="docs-btn docs-btn-primary">Get Started →</a>
+        </div>
+        
+        <div class="docs-components-preview">
+          <h2>Components</h2>
+          <div class="docs-components-grid">
+            <div class="docs-component-card">
+              <h4>Buttons</h4>
+              <div class="docs-component-demo">
+                <button class="osx-btn">Default</button>
+                <button class="osx-btn primary">Primary</button>
+                <button class="osx-btn danger">Danger</button>
+              </div>
+              <a href="/docs/components/button.html">Learn more →</a>
+            </div>
+            
+            <div class="docs-component-card">
+              <h4>Form Fields</h4>
+              <div class="docs-component-demo">
+                <input type="text" class="osx-field-input" placeholder="Enter text...">
+              </div>
+              <a href="/docs/components/form-fields.html">Learn more →</a>
+            </div>
+            
+            <div class="docs-component-card">
+              <h4>Date Picker</h4>
+              <div class="docs-component-demo">
+                <div class="osx-calendar" style="width: 200px;">
+                  <div class="osx-calendar-header">
+                    <button class="osx-calendar-nav">&lt;</button>
+                    <span class="osx-calendar-month">February 2026</span>
+                    <button class="osx-calendar-nav">&gt;</button>
+                  </div>
+                </div>
+              </div>
+              <a href="/docs/components/date-picker.html">Learn more →</a>
+            </div>
+            
+            <div class="docs-component-card">
+              <h4>Toggle</h4>
+              <div class="docs-component-demo">
+                <label class="osx-toggle">
+                  <input type="checkbox" class="osx-toggle-input" checked>
+                  <span class="osx-toggle-track">
+                    <span class="osx-toggle-thumb"></span>
+                  </span>
+                </label>
+              </div>
+              <a href="/docs/components/toggle.html">Learn more →</a>
+            </div>
+            
+            <div class="docs-component-card">
+              <h4>Tabs</h4>
+              <div class="docs-component-demo">
+                <div class="osx-tabs" style="width: 200px;">
+                  <div class="osx-tabs-nav">
+                    <button class="osx-tabs-tab active">Tab 1</button>
+                    <button class="osx-tabs-tab">Tab 2</button>
+                  </div>
+                </div>
+              </div>
+              <a href="/docs/components/tabs.html">Learn more →</a>
+            </div>
+            
+            <div class="docs-component-card">
+              <h4>Toast</h4>
+              <div class="docs-component-demo">
+                <div class="osx-toast show">
+                  <span class="osx-toast-message">Operation successful!</span>
+                </div>
+              </div>
+              <a href="/docs/components/toast.html">Learn more →</a>
+            </div>
+          </div>
+          <a href="/docs/components.html" class="docs-btn docs-btn-secondary">View All Components →</a>
+        </div>
+      </div>
+      
+      <footer class="docs-footer">
+        <p>OSX_UI &copy; 2026. Released under the MIT License.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

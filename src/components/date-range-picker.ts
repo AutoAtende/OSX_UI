@@ -1,140 +1,147 @@
-import { createCalendar, type CalendarOptions, type CalendarResult } from './calendar.js';
+import { createCalendar, type CalendarOptions, type CalendarResult } from './calendar.js'
 
 export interface DateRange {
-  start: Date | null;
-  end: Date | null;
+  start: Date | null
+  end: Date | null
 }
 
 export interface DateRangePickerOptions {
-  min?: Date;
-  max?: Date;
-  value?: DateRange;
-  onChange?: (range: DateRange) => void;
+  min?: Date
+  max?: Date
+  value?: DateRange
+  onChange?: (range: DateRange) => void
 }
 
 export interface DateRangePickerResult {
-  container: HTMLElement;
-  setValue: (range: DateRange) => void;
-  getValue: () => DateRange;
-  getSelecting: () => 'start' | 'end';
+  container: HTMLElement
+  setValue: (range: DateRange) => void
+  getValue: () => DateRange
+  getSelecting: () => 'start' | 'end'
 }
 
 function formatDate(date: Date): string {
-  const y = date.getFullYear();
-  const m = String(date.getMonth() + 1).padStart(2, '0');
-  const d = String(date.getDate()).padStart(2, '0');
-  return `${y}-${m}-${d}`;
+  const y = date.getFullYear()
+  const m = String(date.getMonth() + 1).padStart(2, '0')
+  const d = String(date.getDate()).padStart(2, '0')
+  return `${y}-${m}-${d}`
 }
 
 export function createDateRangePicker(opts: DateRangePickerOptions = {}): DateRangePickerResult {
-  const container = document.createElement('div');
-  container.className = 'osx-daterangepicker';
+  if (opts.min && opts.max && opts.min > opts.max) {
+    console.warn('createDateRangePicker: min date is after max date')
+  }
+  if (opts.value?.start && opts.value?.end && opts.value.start > opts.value.end) {
+    console.warn('createDateRangePicker: start date is after end date')
+  }
 
-  let range: DateRange = opts.value || { start: null, end: null };
+  const container = document.createElement('div')
+  container.className = 'osx-daterangepicker'
 
-  const inputsContainer = document.createElement('div');
-  inputsContainer.className = 'osx-daterangepicker-inputs';
+  let range: DateRange = opts.value || { start: null, end: null }
 
-  const startInput = document.createElement('input');
-  startInput.type = 'text';
-  startInput.className = 'osx-daterangepicker-input';
-  startInput.placeholder = 'Start date';
+  const inputsContainer = document.createElement('div')
+  inputsContainer.className = 'osx-daterangepicker-inputs'
 
-  const separator = document.createElement('span');
-  separator.className = 'osx-daterangepicker-separator';
-  separator.textContent = '→';
+  const startInput = document.createElement('input')
+  startInput.type = 'text'
+  startInput.className = 'osx-daterangepicker-input'
+  startInput.placeholder = 'Start date'
 
-  const endInput = document.createElement('input');
-  endInput.type = 'text';
-  endInput.className = 'osx-daterangepicker-input';
-  endInput.placeholder = 'End date';
+  const separator = document.createElement('span')
+  separator.className = 'osx-daterangepicker-separator'
+  separator.textContent = '→'
 
-  inputsContainer.appendChild(startInput);
-  inputsContainer.appendChild(separator);
-  inputsContainer.appendChild(endInput);
-  container.appendChild(inputsContainer);
+  const endInput = document.createElement('input')
+  endInput.type = 'text'
+  endInput.className = 'osx-daterangepicker-input'
+  endInput.placeholder = 'End date'
 
-  let startCal: CalendarResult | null = null;
-  let endCal: CalendarResult | null = null;
-  let selecting: 'start' | 'end' = 'start';
+  inputsContainer.appendChild(startInput)
+  inputsContainer.appendChild(separator)
+  inputsContainer.appendChild(endInput)
+  container.appendChild(inputsContainer)
 
-  const calendarsContainer = document.createElement('div');
-  calendarsContainer.className = 'osx-daterangepicker-calendars';
-  calendarsContainer.style.display = 'none';
+  let startCal: CalendarResult | null = null
+  let endCal: CalendarResult | null = null
+  let selecting: 'start' | 'end' = 'start'
 
-  const calendarsWrapper = document.createElement('div');
-  calendarsWrapper.className = 'osx-daterangepicker-wrapper';
+  const calendarsContainer = document.createElement('div')
+  calendarsContainer.className = 'osx-daterangepicker-calendars'
+  calendarsContainer.style.display = 'none'
+
+  const calendarsWrapper = document.createElement('div')
+  calendarsWrapper.className = 'osx-daterangepicker-wrapper'
 
   function renderCalendars() {
-    calendarsWrapper.innerHTML = '';
+    calendarsWrapper.innerHTML = ''
 
     const startCalOpts: CalendarOptions = {
       value: range.start || undefined,
       min: opts.min,
       max: opts.max,
       onChange: (date) => {
-        range.start = date;
-        selecting = 'end';
-        renderCalendars();
-        updateInputs();
-        if (opts.onChange) opts.onChange(range);
-      },
-    };
+        range.start = date
+        selecting = 'end'
+        renderCalendars()
+        updateInputs()
+        if (opts.onChange) opts.onChange(range)
+      }
+    }
 
     const endCalOpts: CalendarOptions = {
       value: range.end || undefined,
       min: range.start || opts.min,
       max: opts.max,
       onChange: (date) => {
-        range.end = date;
-        selecting = 'start';
-        renderCalendars();
-        updateInputs();
-        if (opts.onChange) opts.onChange(range);
-      },
-    };
+        range.end = date
+        selecting = 'start'
+        renderCalendars()
+        updateInputs()
+        if (opts.onChange) opts.onChange(range)
+      }
+    }
 
-    startCal = createCalendar(startCalOpts);
-    endCal = createCalendar(endCalOpts);
+    startCal = createCalendar(startCalOpts)
+    endCal = createCalendar(endCalOpts)
 
-    calendarsWrapper.appendChild(startCal.container);
-    calendarsWrapper.appendChild(endCal.container);
-    calendarsContainer.appendChild(calendarsWrapper);
+    calendarsWrapper.appendChild(startCal.container)
+    calendarsWrapper.appendChild(endCal.container)
+    calendarsContainer.appendChild(calendarsWrapper)
   }
 
   function updateInputs() {
-    startInput.value = range.start ? formatDate(range.start) : '';
-    endInput.value = range.end ? formatDate(range.end) : '';
+    startInput.value = range.start ? formatDate(range.start) : ''
+    endInput.value = range.end ? formatDate(range.end) : ''
   }
 
   function toggleCalendars() {
     if (calendarsContainer.style.display === 'none') {
-      renderCalendars();
-      calendarsContainer.style.display = 'block';
+      renderCalendars()
+      calendarsContainer.style.display = 'block'
     } else {
-      calendarsContainer.style.display = 'none';
+      calendarsContainer.style.display = 'none'
     }
   }
 
-  startInput.addEventListener('focus', toggleCalendars);
-  endInput.addEventListener('focus', toggleCalendars);
+  startInput.addEventListener('focus', toggleCalendars)
+  endInput.addEventListener('focus', toggleCalendars)
 
-  container.appendChild(calendarsContainer);
+  container.appendChild(calendarsContainer)
 
   return {
     container,
     setValue(newRange: DateRange) {
-      range = newRange;
-      updateInputs();
+      range = newRange
+      updateInputs()
       if (calendarsContainer.style.display !== 'none') {
-        renderCalendars();
+        renderCalendars()
       }
     },
     getValue() {
-      return range;
+      return range
     },
     getSelecting() {
-      return selecting;
-    },
-  };
+      return selecting
+    }
+  }
 }

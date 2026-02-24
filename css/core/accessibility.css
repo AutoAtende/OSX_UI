@@ -1,0 +1,72 @@
+/* Focus visible styles for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--osx-accent, #007aff);
+  outline-offset: 2px;
+}
+
+/* Remove outline on mouse focus */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Specific component focus overrides */
+.osx-btn:focus-visible {
+  outline: 2px solid var(--osx-accent, #007aff);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+.osx-tabs-tab:focus-visible {
+  outline: 2px solid var(--osx-accent, #007aff);
+  outline-offset: -2px;
+}
+
+.osx-accordion-header:focus-visible {
+  outline: 2px solid var(--osx-accent, #007aff);
+  outline-offset: -2px;
+}
+
+.osx-dropdown-item:focus-visible,
+.osx-contextmenu-item:focus-visible {
+  outline: none;
+  background: var(--osx-accent, #007aff);
+  color: #fff;
+}
+
+.osx-sidebar-item:focus-visible {
+  outline: 2px solid var(--osx-accent, #007aff);
+  outline-offset: -2px;
+}
+
+.osx-table th.sortable:focus-visible {
+  outline: 2px solid var(--osx-accent, #007aff);
+  outline-offset: -2px;
+}
+
+.osx-calendar-day:focus-visible {
+  outline: 2px solid var(--osx-accent, #007aff);
+  outline-offset: -2px;
+}
+
+.osx-tree-row:focus-visible {
+  outline: 2px solid var(--osx-accent, #007aff);
+  outline-offset: -2px;
+}
+
+.osx-list-item:focus-visible {
+  outline: 2px solid var(--osx-accent, #007aff);
+  outline-offset: -2px;
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

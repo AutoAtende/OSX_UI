@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Component - OSX_UI</title>
+  <link rel="stylesheet" href="/css/osx-ui.css">
+  <link rel="stylesheet" href="/docs/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🖥️</text></svg>">
+</head>
+<body>
+  <div class="docs-container">
+    <aside class="docs-sidebar">
+      <div class="docs-sidebar-header">
+        <a href="/" class="docs-logo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <line x1="9" y1="3" x2="9" y2="21"/>
+          </svg>
+          <span>OSX_UI</span>
+        </a>
+      </div>
+      <nav class="docs-nav">
+        <div class="docs-nav-section">
+          <a href="/" class="docs-nav-title">Getting Started</a>
+          <a href="/docs/intro.html" class="docs-nav-link">Introduction</a>
+          <a href="/docs/install.html" class="docs-nav-link">Installation</a>
+          <a href="/docs/quick-start.html" class="docs-nav-link">Quick Start</a>
+        </div>
+        <div class="docs-nav-section">
+          <a href="/docs/components.html" class="docs-nav-title">Components</a>
+          <a href="/docs/components/button.html" class="docs-nav-link">Button</a>
+          <a href="/docs/components/card.html" class="docs-nav-link">Card</a>
+          <a href="/docs/components/form-fields.html" class="docs-nav-link">Form Fields</a>
+          <a href="/docs/components/date-picker.html" class="docs-nav-link">Date Picker</a>
+          <a href="/docs/components/checkbox-radio.html" class="docs-nav-link">Checkbox & Radio</a>
+          <a href="/docs/components/toggle.html" class="docs-nav-link">Toggle</a>
+          <a href="/docs/components/autocomplete.html" class="docs-nav-link">Autocomplete</a>
+          <a href="/docs/components/file-upload.html" class="docs-nav-link">File Upload</a>
+          <a href="/docs/components/table.html" class="docs-nav-link">Table</a>
+          <a href="/docs/components/tabs.html" class="docs-nav-link">Tabs</a>
+          <a href="/docs/components/accordion.html" class="docs-nav-link">Accordion</a>
+          <a href="/docs/components/toast.html" class="docs-nav-link">Toast</a>
+        </div>
+      </nav>
+    </aside>
+    
+    <main class="docs-main">
+      <header class="docs-header">
+        <div class="docs-header-search">
+          <input type="text" placeholder="Search documentation..." class="docs-search-input">
+        </div>
+      </header>
+      
+      <div class="docs-content">
+        <div class="docs-page-header">
+          <h1>Button</h1>
+          <p>Creates a styled button element with various variants and states</p>
+        </div>
+        
+        <div class="docs-section">
+          <h2>Import</h2>
+          <div class="docs-code-block">
+            <pre><code><span class="docs-keyword">import</span> { <span class="docs-function">createButton</span> } <span class="docs-keyword">from</span> <span class="docs-string">'osx-ui'</span>;</code></pre>
+          </div>
+        </div>
+        
+        <div class="docs-section">
+          <h2>Usage</h2>
+          <div class="docs-example">
+            <div class="docs-example-header">Basic Button</div>
+            <div class="docs-example-content" style="display: flex; gap: 12px; align-items: center;">
+              <button class="osx-btn">Default</button>
+              <button class="osx-btn primary">Primary</button>
+              <button class="osx-btn danger">Danger</button>
+              <button class="osx-btn ghost">Ghost</button>
+            </div>
+            <div class="docs-example-code">
+              <pre><code><span class="docs-keyword">const</span> btn = <span class="docs-function">createButton</span>({
+  <span class="docs-property">label</span>: <span class="docs-string">'Click me'</span>,
+  <span class="docs-property">variant</span>: <span class="docs-string">'primary'</span>,
+  <span class="docs-property">onClick</span>: () => console.<span class="docs-function">log</span>(<span class="docs-string">'Clicked!'</span>),
+});
+
+document.body.<span class="docs-function">appendChild</span>(btn);</code></pre>
+            </div>
+          </div>
+        </div>
+        
+        <div class="docs-section">
+          <h2>Options</h2>
+          <table class="docs-api-table">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Type</th>
+                <th>Default</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>label</code></td>
+                <td>string</td>
+                <td>-</td>
+                <td>Button text</td>
+              </tr>
+              <tr>
+                <td><code>variant</code></td>
+                <td>'default' | 'primary' | 'danger' | 'ghost' | 'icon' | 'status'</td>
+                <td>'default'</td>
+                <td>Visual style of the button</td>
+              </tr>
+              <tr>
+                <td><code>statusColor</code></td>
+                <td>'ok' | 'danger' | 'purple' | 'muted'</td>
+                <td>-</td>
+                <td>Color when variant is 'status'</td>
+              </tr>
+              <tr>
+                <td><code>icon</code></td>
+                <td>string</td>
+                <td>-</td>
+                <td>HTML string (e.g. SVG) used instead of label</td>
+              </tr>
+              <tr>
+                <td><code>title</code></td>
+                <td>string</td>
+                <td>-</td>
+                <td>Tooltip text</td>
+              </tr>
+              <tr>
+                <td><code>ariaLabel</code></td>
+                <td>string</td>
+                <td>-</td>
+                <td>Accessible label</td>
+              </tr>
+              <tr>
+                <td><code>onClick</code></td>
+                <td>() =&gt; void</td>
+                <td>-</td>
+                <td>Click handler</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="docs-section">
+          <h2>Examples</h2>
+          
+          <h3>Primary Button</h3>
+          <div class="docs-example">
+            <div class="docs-example-content" style="display: flex; gap: 12px; align-items: center;">
+              <button class="osx-btn primary">Save</button>
+            </div>
+            <div class="docs-example-code">
+              <pre><code><span class="docs-keyword">const</span> saveBtn = <span class="docs-function">createButton</span>({
+  <span class="docs-property">label</span>: <span class="docs-string">'Save'</span>,
+  <span class="docs-property">variant</span>: <span class="docs-string">'primary'</span>,
+  <span class="docs-property">onClick</span>: () => <span class="docs-function">saveData</span>(),
+});</code></pre>
+            </div>
+          </div>
+          
+          <h3>Danger Button</h3>
+          <div class="docs-example">
+            <div class="docs-example-content" style="display: flex; gap: 12px; align-items: center;">
+              <button class="osx-btn danger">Delete</button>
+            </div>
+            <div class="docs-example-code">
+              <pre><code><span class="docs-keyword">const</span> deleteBtn = <span class="docs-function">createButton</span>({
+  <span class="docs-property">label</span>: <span class="docs-string">'Delete'</span>,
+  <span class="docs-property">variant</span>: <span class="docs-string">'danger'</span>,
+  <span class="docs-property">onClick</span>: () => <span class="docs-function">confirmDelete</span>(),
+});</code></pre>
+            </div>
+          </div>
+          
+          <h3>Icon Button</h3>
+          <div class="docs-example">
+            <div class="docs-example-content" style="display: flex; gap: 12px; align-items: center;">
+              <button class="osx-btn icon" title="Menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+                  <line x1="3" y1="12" x2="21" y2="12"/>
+                  <line x1="3" y1="6" x2="21" y2="6"/>
+                  <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+              </button>
+            </div>
+            <div class="docs-example-code">
+              <pre><code><span class="docs-keyword">const</span> menuBtn = <span class="docs-function">createButton</span>({
+  <span class="docs-property">icon</span>: <span class="docs-string">'&lt;svg&gt;...&lt;/svg&gt;'</span>,
+  <span class="docs-property">variant</span>: <span class="docs-string">'icon'</span>,
+  <span class="docs-property">title</span>: <span class="docs-string">'Open menu'</span>,
+  <span class="docs-property">ariaLabel</span>: <span class="docs-string">'Open menu'</span>,
+});</code></pre>
+            </div>
+          </div>
+          
+          <h3>Status Button</h3>
+          <div class="docs-example">
+            <div class="docs-example-content" style="display: flex; gap: 12px; align-items: center;">
+              <button class="osx-btn status ok">Online</button>
+              <button class="osx-btn status danger">Offline</button>
+              <button class="osx-btn status purple">Busy</button>
+            </div>
+            <div class="docs-example-code">
+              <pre><code><span class="docs-keyword">const</span> statusBtn = <span class="docs-function">createButton</span>({
+  <span class="docs-property">label</span>: <span class="docs-string">'Online'</span>,
+  <span class="docs-property">variant</span>: <span class="docs-string">'status'</span>,
+  <span class="docs-property">statusColor</span>: <span class="docs-string">'ok'</span>,
+});</code></pre>
+            </div>
+          </div>
+        </div>
+        
+        <div class="docs-section">
+          <h2>CSS Classes</h2>
+          <table class="docs-api-table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>.osx-btn</code></td>
+                <td>Base button class</td>
+              </tr>
+              <tr>
+                <td><code>.osx-btn.primary</code></td>
+                <td>Primary variant (blue)</td>
+              </tr>
+              <tr>
+                <td><code>.osx-btn.danger</code></td>
+                <td>Danger variant (red)</td>
+              </tr>
+              <tr>
+                <td><code>.osx-btn.ghost</code></td>
+                <td>Ghost variant (transparent)</td>
+              </tr>
+              <tr>
+                <td><code>.osx-btn.icon</code></td>
+                <td>Icon-only button</td>
+              </tr>
+              <tr>
+                <td><code>.osx-btn.status</code></td>
+                <td>Status indicator button</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <footer class="docs-footer">
+        <p>OSX_UI &copy; 2026. Released under the MIT License.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

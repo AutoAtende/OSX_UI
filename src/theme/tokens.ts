@@ -1,4 +1,4 @@
-import type { ThemeTokens } from '../types.js';
+import type { ThemeTokens } from '../types.js'
 
 export const defaultTokens: ThemeTokens = {
   bg: '#0b1220',
@@ -19,5 +19,5 @@ export const defaultTokens: ThemeTokens = {
   font: 'system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial',
   menubarHeight: '28px',
   border: 'rgba(148,163,184,.18)',
-  borderLight: 'rgba(255,255,255,.08)',
-};
+  borderLight: 'rgba(255,255,255,.08)'
+}

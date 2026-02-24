@@ -21,9 +21,34 @@ npm run build:css
 
 # Clean dist folder
 npm run clean
-```
 
-**Note:** This project has no test suite. There are no test commands in package.json and no test files exist in the repository.
+# Development watch mode (ESM + CJS in parallel)
+npm run dev
+
+# Run tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage report
+npm run test:coverage
+
+# Lint source files
+npm run lint
+
+# Auto-fix lint issues
+npm run lint:fix
+
+# Format source files
+npm run format
+
+# Check formatting
+npm run format:check
+
+# Type-check without emitting
+npm run typecheck
+```
 
 ## Code Style Guidelines
 

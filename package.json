@@ -41,7 +41,16 @@
     "build:esm": "tsc -p tsconfig.esm.json",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:css": "node scripts/bundle-css.js",
+    "dev": "concurrently \"tsc -p tsconfig.esm.json --watch --preserveWatchOutput\" \"tsc -p tsconfig.cjs.json --watch --preserveWatchOutput\"",
     "clean": "rm -rf dist",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "format:check": "prettier --check \"src/**/*.ts\"",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "prepublishOnly": "npm run clean && npm run build"
   },
   "keywords": [
@@ -55,7 +64,17 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^5.4.0"
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "@vitest/coverage-v8": "^4.0.18",
+    "concurrently": "^9.2.1",
+    "eslint": "^10.0.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "jsdom": "^28.1.0",
+    "prettier": "^3.8.1",
+    "typescript": "^5.4.0",
+    "vitest": "^4.0.18"
   },
   "peerDependencies": {
     "express": ">=4.0.0"

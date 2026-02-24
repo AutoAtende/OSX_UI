@@ -1,4 +1,4 @@
-import type { ThemeTokens } from '../../types.js';
+import type { ThemeTokens } from '../../types.js'
 
 export const lightTheme: ThemeTokens = {
   bg: '#f0f2f5',
@@ -19,5 +19,5 @@ export const lightTheme: ThemeTokens = {
   font: 'system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial',
   menubarHeight: '28px',
   border: 'rgba(0,0,0,.1)',
-  borderLight: 'rgba(0,0,0,.06)',
-};
+  borderLight: 'rgba(0,0,0,.06)'
+}

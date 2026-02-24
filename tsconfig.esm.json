@@ -4,5 +4,6 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "outDir": "./dist/esm"
-  }
+  },
+  "exclude": ["node_modules", "dist", "examples", "src/**/__tests__/**"]
 }
